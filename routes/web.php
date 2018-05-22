@@ -17,3 +17,7 @@ Route::get('about', 'PublicController@about'); // Aboutページ
 
 Route::get('contact', 'PublicController@contact'); // Contactページ GET
 Route::post('contact', 'PublicController@contactPost'); // Contactページ POST
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
