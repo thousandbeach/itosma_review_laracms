@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicController@index'); // トップページ
+Route::get('post/{id}', 'PublicController@singlePost'); // 投稿ページ
+Route::get('about', 'PublicController@about'); // Aboutページ
+
+Route::get('contact', 'PublicController@contact'); // Contactページ GET
+Route::post('contact', 'PublicController@contactPost'); // Contactページ POST
