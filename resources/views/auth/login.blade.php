@@ -91,27 +91,27 @@
                         {{ csrf_field() }}
                         <div class="card-body py-5">
                             <div class="form-group">
-                                <label class="form-control-label" for="email">メールアドレス</label>
-                                <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' has-error control-label' : '' }}" value="{{ old('email') }}" required autofocus>
+                                <label class="form-control-label control-label" for="email">メールアドレス</label>
+                                <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' has-error text-danger' : '' }}" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong class="text-danger">{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
 
                             <div class="form-group">
                                 <label class="form-control-label" for="password">パスワード</label>
-                                <input type="password" name="password" id="password" class="form-control{{ $errors->has('password') ? ' has-error' : '' }}" required>
+                                <input type="password" name="password" id="password" class="form-control{{ $errors->has('password') ? ' has-error text-danger' : '' }}" required>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong class="text-danger">{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>
 
                             <div class="custom-control custom-checkbox mt-4">
-                                <input type="checkbox" class="custom-control-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input type="checkbox" class="custom-control-input" name="remember" id="login" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="login">Remember Me</label>
                             </div>
                         </div>
