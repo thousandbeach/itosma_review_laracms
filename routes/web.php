@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', 'PublicController@index'); // トップページ
-Route::get('post/{id}', 'PublicController@singlePost'); // 投稿ページ
-Route::get('about', 'PublicController@about'); // Aboutページ
+Route::get('/', 'PublicController@index')->name('index'); // トップページ
+Route::get('post/{id}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
+Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
 
-Route::get('contact', 'PublicController@contact'); // Contactページ GET
-Route::post('contact', 'PublicController@contactPost'); // Contactページ POST
+Route::get('contact', 'PublicController@contact')->name('contact'); // Contactページ GET
+Route::post('contact', 'PublicController@contactPost')->name('contactPost'); // Contactページ POST
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
