@@ -22,6 +22,11 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('dashboard') }}">ダッシュボード</a>
             </li>
+            <li class="nav-item">
+                <form id="logout-form" name="dashboard_form" action="{{ route('logout') }}" method="post">{{ csrf_field() }}
+                </form>
+                <a class="nav-link" onclick="document.getElementById('logout-form').submit();" href="#">ログアウト</a>
+            </li>
         @else
             <li class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">ログイン</a>
