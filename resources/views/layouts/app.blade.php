@@ -70,7 +70,6 @@
                 </div>
             </div>
         </nav>
-        <p>{{ Auth::user()->admin }}</p>
 
         @yield('content')
     </div>
