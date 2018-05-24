@@ -63,7 +63,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            <p class="copyright text-muted">Copyright &copy; 2018 &nbsp;&nbsp;Thousand Beach & Company .LLC &nbsp;&nbsp;All Rights Reserved.</p>
           </div>
         </div>
       </div>

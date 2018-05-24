@@ -16,8 +16,8 @@ class PublicController extends Controller
     }
 
     // 投稿ページ
-    public function singlePost($id){
-        return view('singlePost');
+    public function singlePost(Post $post){
+        return view('singlePost', compact('post'));
     }
 
     // Aboutページ
