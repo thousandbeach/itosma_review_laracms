@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     //
     public function __construct(){
-        $this->middleware('checkRole:admin');
+        $this->middleware('checkRole:admin'); // :adminはロールを示す
     }
 
     public function dashboard(){
