@@ -36,12 +36,13 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
-                <div class="dropdown-header">Account</div>
+                <div class="dropdown-header">アカウント</div>
 
                 <a href="#" class="dropdown-item">
-                    <i class="fa fa-user"></i> Profile
+                    <i class="fa fa-user"></i> プロフィール
                 </a>
 
+                <!-- 使用しないのでコメントアウト
                 <a href="#" class="dropdown-item">
                     <i class="fa fa-envelope"></i> Messages
                 </a>
@@ -55,9 +56,12 @@
                 <a href="#" class="dropdown-item">
                     <i class="fa fa-wrench"></i> Settings
                 </a>
+                -->
 
-                <a href="#" class="dropdown-item">
-                    <i class="fa fa-lock"></i> Logout
+                <form id="logout-form" name="dashboard_form" action="{{ route('logout') }}" method="post">{{ csrf_field() }}
+                </form>
+                <a href="#" class="dropdown-item" onclick="document.getElementById('logout-form').submit();">
+                    <i class="fa fa-lock"></i> ログアウト
                 </a>
             </div>
         </li>
