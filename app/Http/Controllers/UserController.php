@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserUpdate;
 
 class UserController extends Controller
 {
@@ -22,7 +24,7 @@ class UserController extends Controller
     }
 
     // 管理パネルのprofileの処理に相当
-    public function profilePost(Request $request){
+    public function profilePost(UserUpdate $request){
 
         $user = Auth::user();
 
