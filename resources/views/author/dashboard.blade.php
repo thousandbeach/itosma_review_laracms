@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title') Author - ダッシュボード@endsection
+@section('title') Author - ダッシュボード @endsection
 
 @section('content')
     <div class="content">

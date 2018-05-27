@@ -12,25 +12,14 @@
     </a>
 
     <ul class="navbar-nav ml-auto">
-        <!-- 通知用のバッジ
-        <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-danger">5</span>
-            </a>
-        </li>
-        -->
-        <!-- 受信メール通知のバッジ
-        <li class="nav-item d-md-down-none">
-            <a href="#">
-                <i class="fa fa-envelope-open"></i>
-                <span class="badge badge-pill badge-danger">5</span>
-            </a>
-        </li>
-        -->
 
+        @if (Auth::user()->author == true)
+            <a class="btn btn-primary" href="{{ route('newPost') }}" name="button">新しい記事を書く</a> |
+        @endif
         <li class="nav-item dropdown">
+
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                 <img src="{{ asset('admin/assets/imgs/avatar-1.png') }}" class="avatar avatar-sm" alt="logo">
                 <span class="small ml-1 d-md-down-none">{{ Auth::user()->name }}</span>
             </a>
