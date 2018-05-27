@@ -41,6 +41,26 @@ class UserController extends Controller
         $user->email = $request['email'];
         $user->save();
 
+        if($request['password'] != "") {
+            if(!(Hash::check($request['password'], Auth::user()->password))) {
+                return redirect()->back()->with('error', "現在のパスワードと入力したパスワードが一致しないようです...");
+            }
+
+            if(strcmp($request['password'], $request['new_password']) == 0){
+                return redirect()->back()->with('error', "新しいパスワードは現在のパスワードとは違うものをご入力ください。");
+            }
+
+            $validation = $request->validate([
+                'password' => 'required',
+                'new_password' => 'required|string|min:6|confirmed',
+            ]);
+
+            $user->password = bcrypt($request['new_password']);
+            $user->save();
+
+            return redirect()->back()->with('success', 'パスワードの変更完了！');
+        }
+
         return back();
     }
 }
