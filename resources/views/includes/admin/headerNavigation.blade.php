@@ -14,7 +14,7 @@
     <ul class="navbar-nav ml-auto">
 
         @if (Auth::user()->author == true)
-            <a class="btn btn-primary" href="{{ route('newPost') }}" name="button">新しい記事を書く</a> |
+            <a class="btn btn-primary" href="{{ route('newPost') }}" name="button">新しい記事を書く</a>&nbsp;&nbsp;
         @endif
         <li class="nav-item dropdown">
 
