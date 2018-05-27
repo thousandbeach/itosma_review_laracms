@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use App\Comment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthorController extends Controller
 {
@@ -14,7 +18,15 @@ class AuthorController extends Controller
 
     // 管理パネルの左側サイドバーのAUTHORのところのdashboardに相当
     public function dashboard(){
-        return view('author.dashboard');
+        $posts = Post::where('user_id', Auth::id())->pluck('id')->toArray();
+        //dump($posts);
+
+        $allComments = Comment::whereIn('post_id', $posts)->get();
+        //dump($allComments);
+
+        $todayComments = $allComments->where('created_at', '>=', \Carbon\Carbon::today())->count();
+
+        return view('author.dashboard', compact('allComments', 'todayComments'));
     }
 
     // 管理パネルの左側サイドバーのAUTHORのところのpostsに相当
