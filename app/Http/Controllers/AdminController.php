@@ -21,7 +21,14 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当
     public function comments(){
-        return view('admin.comments');
+        $comments = Comment::all();
+        return view('admin.comments', compact('comments'));
+    }
+
+    public function deleteComment($id){
+        $comment = Comment::where('id', $id)->first();
+        $comment->delete();
+        return back();
     }
 
     // 管理パネルの左側サイドバーのADMINのところのpostsに相当

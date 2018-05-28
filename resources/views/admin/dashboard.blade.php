@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title') Admin - 管理者用ダッシュボード @endsection
+@section('title') Admin - 管理者用のダッシュボード @endsection
 
 @section('content')
     <div class="content">
