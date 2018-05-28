@@ -56,4 +56,26 @@ class AuthorController extends Controller
 
         return back()->with('success', '新規記事の投稿完了！');
     }
+
+    // 記事の編集機能
+    public function postEdit($id){
+        $post = Post::where('id', $id)->where('user_id', Auth::id())->first();
+        return view('author.editPost', compact('post'));
+    }
+
+    public function postEditPost(CreatePost $request, $id){
+        $post = Post::where('id', $id)->where('user_id', Auth::id())->first();
+        $post->title = $request['title'];
+        $post->content = $request['content'];
+        $post->save();
+
+        return back()->with('success', '記事内容を更新しました。');
+    }
+
+    public function deletePost($id){
+        $post = Post::where('id', $id)->where('user_id', Auth::id())->first();
+        $post->delete();
+
+        return back();
+    }
 }
