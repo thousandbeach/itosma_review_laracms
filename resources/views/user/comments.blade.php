@@ -7,7 +7,7 @@
     <div class="content">
         <div class="card">
             <div class="card-header bg-light">
-                User Comments
+                User Comments (ユーザーのコメント)
             </div>
 
             <div class="card-body">

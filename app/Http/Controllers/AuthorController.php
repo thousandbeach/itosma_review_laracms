@@ -37,7 +37,9 @@ class AuthorController extends Controller
 
     // 管理パネルの左側サイドバーのAUTHORのところのcommentsに相当
     public function comments(){
-        return view('author.comments');
+        $posts = Post::where('user_id', Auth::id())->pluck('id')->toArray();
+        $comments = Comment::whereIn('post_id', $posts)->get();
+        return view('author.comments', compact('comments'));
     }
 
     public function newPost(){
