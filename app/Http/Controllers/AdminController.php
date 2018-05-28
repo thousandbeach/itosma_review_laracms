@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePost;
 
@@ -60,7 +61,8 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのusersに相当
     public function users(){
-        return view('admin.users');
+        $users = User::all();
+        return view('admin.users', compact('users'));
     }
 
 }

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title') Admin Posts - 管理者の記事投稿ページ @endsection
+@section('title') Admin Posts - 管理者用の記事投稿ページ @endsection
 
 @section('content')
     @section('content')
