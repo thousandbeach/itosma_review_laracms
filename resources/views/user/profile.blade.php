@@ -87,8 +87,8 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="new_password_confirmation">新しいパスワード確認</label>
-                                                <input name="new_password_confirmation" type="password" class="form-control">
+                                                <label class="form-control-label" for="password_confirmation">新しいパスワード確認</label>
+                                                <input id="password-confirm" name="password_confirmation" type="password" class="form-control">
                                             </div>
                                         </div>
                                     </div>

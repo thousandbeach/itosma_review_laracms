@@ -26,7 +26,7 @@ class UserUpdate extends FormRequest
         return [
             //バリデーションルール
             'name' => 'required|string|max:191',
-            'email' => 'required|string|email|max:191|unique:user',
+            'email' => 'required|string|email|max:191', //|unique:users', これは必要ないかも
         ];
     }
 }
