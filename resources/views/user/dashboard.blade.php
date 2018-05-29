@@ -44,15 +44,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            Comments by days
+                            Comments by days (日毎のコメント)
                         </div>
 
                         <div class="card-body p-0">
-
+                            {!! $chart->container() !!}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {!! $chart->script() !!}
+
 @endsection

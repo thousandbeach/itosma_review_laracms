@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserUpdate;
+use \Carbon\Carbon;
+//use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+//use App\Charts;
+use App\Charts\DashboardChart;
+
 
 class UserController extends Controller
 {
@@ -18,7 +23,31 @@ class UserController extends Controller
 
     // 管理パネルの左側サイドバーのUSERのところのdashboardに相当
     public function dashboard(){
-        return view('user.dashboard');
+        // Chart.js 関連
+        $chart = new DashboardChart;
+        // Carbon\Carbon
+        $days = $this->generateDateRange(Carbon::now()->subDays(30), Carbon::now());
+
+        $commmets = [];
+
+        foreach ($days as $day) {
+            $comments[] = Comment::whereDate('created_at', $day)->where('user_id', Auth::id())->count();
+        }
+
+        $chart->dataset('Comments', 'line', $comments);
+        $chart->labels($days);
+
+        // Chart.js の組み込み方等をレクチャー
+        return view('user.dashboard', compact('chart'));
+    }
+
+    // Chart.js関連
+    private function generateDateRange(Carbon $start_date, Carbon $end_date){
+        $dates = [];
+        for($date = $start_date; $date->lte($end_date); $date->addDay()){
+            $dates[] = $date->format('Y-m-d');
+        }
+        return $dates;
     }
 
     // 管理パネルの左側サイドバーのUSERのところのcommentsに相当
