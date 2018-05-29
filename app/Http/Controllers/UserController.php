@@ -10,6 +10,12 @@ use App\Http\Requests\UserUpdate;
 
 class UserController extends Controller
 {
+
+    //
+    public function __construct(){
+        $this->middleware('auth'); // ログインしてないときに管理パネル（/user/comments等）にアクセスしたときに、エラーになっていたのを、loginページが表示されるようにした
+    }
+
     // 管理パネルの左側サイドバーのUSERのところのdashboardに相当
     public function dashboard(){
         return view('user.dashboard');

@@ -14,6 +14,7 @@ class AuthorController extends Controller
 
     public function __construct(){
         $this->middleware('checkRole:author'); // :authorはロールを示す web.phpのprefixにも記載されている
+        $this->middleware('auth'); // ログインしてないときに管理パネル（/user/comments等）にアクセスしたときに、エラーになっていたのを、loginページが表示されるようにした
     }
 
 

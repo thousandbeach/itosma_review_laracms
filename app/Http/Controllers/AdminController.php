@@ -14,6 +14,7 @@ class AdminController extends Controller
     //
     public function __construct(){
         $this->middleware('checkRole:admin'); // :adminはロールを示す
+        $this->middleware('auth'); // ログインしてないときに管理パネル（/user/comments等）にアクセスしたときに、エラーになっていたのを、loginページが表示されるようにした
     }
 
     // 管理パネルの左側サイドバーのADMINのところのdashboardに相当
