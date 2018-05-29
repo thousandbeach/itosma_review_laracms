@@ -36,9 +36,9 @@
                                 <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
                                 <td>{{ \Carbon\Carbon::parse($user->updated_at)->diffForHumans() }}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="#"><i class="icon icon-pencil"></i> &nbsp;編 集</a>
-                                    <form id="deleteUser-{{ $user->id }}" action="#" method="POST">{{ csrf_field() }}</form>
-                                        <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteUser-{{ $user->id }}').submit();">X &nbsp;削 除</button>
+                                    <a class="btn btn-warning" href="{{ route('adminEditUser', $user->id) }}">編 集</a>
+                                    <form id="deleteUser-{{ $user->id }}" action="{{ route('adminDeleteUser', $user->id) }}" method="POST">{{ csrf_field() }}</form><br>
+                                        <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteUser-{{ $user->id }}').submit();">削 除</button>
                                 </td>
                             </tr>
                         @endforeach

@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" name="button" class="btn btn-success">記事を投稿する</button>
+                            <button type="submit" name="button" class="btn btn-success">編集した記事を投稿する</button>
                         </div>
                         </form>
                     </div>

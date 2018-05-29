@@ -46,7 +46,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="name">お名前</label>
-                                                <input name="name" class="form-control" value="{{ Auth::user()->name }}">
+                                                <input name="name" class="form-control" value="{{ Auth::user()->name }}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="email">メールアドレス</label>
-                                                <input name="email" class="form-control" value="{{ Auth::user()->email }}">
+                                                <input name="email" class="form-control" value="{{ Auth::user()->email }}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -75,20 +75,20 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="password">現在のパスワード</label>
-                                                <input name="password" type="password" class="form-control">
+                                                <input name="password" type="password" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="new_password">新しいパスワード</label>
-                                                <input name="new_password" type="password" class="form-control">
+                                                <input name="new_password" type="password" class="form-control" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="form-control-label" for="password_confirmation">新しいパスワード確認</label>
-                                                <input id="password-confirm" name="password_confirmation" type="password" class="form-control">
+                                                <input id="password-confirm" name="password_confirmation" type="password" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>

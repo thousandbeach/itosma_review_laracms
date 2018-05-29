@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title') Editing 記事編集 {{ $post->title }} @endsection
+@section('title') Editing 管理者用の記事編集ページ {{ $post->title }} @endsection
 
 @section('content')
     <div class="content">
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" name="button" class="btn btn-success">記事を投稿する</button>
+                            <button type="submit" name="button" class="btn btn-success">編集した記事を投稿する</button>
                         </div>
                         </form>
                     </div>

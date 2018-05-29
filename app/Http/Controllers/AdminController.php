@@ -7,6 +7,7 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePost;
+use App\Http\Requests\UserUpdate;
 
 class AdminController extends Controller
 {
@@ -63,6 +64,32 @@ class AdminController extends Controller
     public function users(){
         $users = User::all();
         return view('admin.users', compact('users'));
+    }
+
+    // 管理者のユーザー編集
+    public function editUser($id){
+        $user = User::where('id', $id)->first();
+        return view('admin.EditUser', compact('user'));
+    }
+
+    public function editUserPost(UserUpdate $request, $id){
+        $user = User::where('id', $id)->first();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        if($request['author'] == 1){
+            $user->author = true;
+        } elseif($request['admin'] == 1) {
+            $user->admin = true;
+        }
+        $user->save();
+        return back()->with('success', 'ユーザー情報の更新が完了いたしました！');
+    }
+
+    public function deleteUser($id){
+        $user = User::where('id', $id)->first();
+        $user->delete();
+
+        return back();
     }
 
 }
