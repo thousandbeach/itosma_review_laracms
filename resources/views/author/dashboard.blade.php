@@ -71,15 +71,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            Posts by day
+                            Posts by day (日毎の記事投稿数)
                         </div>
 
                         <div class="card-body p-0">
-
+                            {!! $chart->container() !!}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {!! $chart->script() !!}
+
 @endsection

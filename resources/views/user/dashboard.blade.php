@@ -44,7 +44,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            Comments by days (日毎のコメント)
+                            Comments by days (日毎のコメント数)
                         </div>
 
                         <div class="card-body p-0">

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Comment;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePost;
 use App\Http\Requests\UserUpdate;
+use App\Charts\DashboardChart;
 
 class AdminController extends Controller
 {
@@ -19,7 +21,31 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのdashboardに相当
     public function dashboard(){
-        return view('admin.dashboard');
+
+        // Chart.js 関連
+        $chart = new DashboardChart;
+        // Carbon\Carbon
+        $days = $this->generateDateRange(Carbon::now()->subDays(30), Carbon::now());
+
+        $posts = [];
+
+        foreach ($days as $day) {
+            $posts[] = Post::whereDate('created_at', $day)->count();
+        }
+
+        $chart->dataset('Posts', 'line', $posts);
+        $chart->labels($days);
+
+        return view('admin.dashboard', compact('chart'));
+    }
+
+    // Chart.js関連
+    private function generateDateRange(Carbon $start_date, Carbon $end_date){
+        $dates = [];
+        for($date = $start_date; $date->lte($end_date); $date->addDay()){
+            $dates[] = $date->format('Y-m-d');
+        }
+        return $dates;
     }
 
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserUpdate;
-use \Carbon\Carbon;
+use Carbon\Carbon;
 //use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 //use App\Charts;
 use App\Charts\DashboardChart;
