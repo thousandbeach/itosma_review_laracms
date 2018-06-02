@@ -30,8 +30,7 @@
                                 <td>{{ $comment->content }}</td>
                                 <td>{{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</td>
                                 <td>
-                                    <form id="deleteComment-{{ $comment->id }}" action="{{ route('deleteComment', $comment->id) }}" method="POST">{{ csrf_field() }}</form>
-                                        <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteComment-{{ $comment->id }}').submit();">削 除 する</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCommentModal-{{ $comment->id }}">削 除 する</button>
                                 </td>
                             </tr>
                         @endforeach
@@ -41,4 +40,29 @@
             </div>
         </div>
     </div>
+
+    @foreach ($comments as $comment)
+        <!-- Modal -->
+        <div class="modal fade" id="deleteCommentModal-{{ $comment->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">あなたは、『 {{ $comment->post->title }} 』"のコメントを削除しようとしています...</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                削除してもよろしいでしょうか？
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">いいえ</button>
+                <form id="deleteComment-{{ $comment->id }}" action="{{ route('adminDeleteComment', $comment->id) }}" method="POST">
+                    {{ csrf_field() }}
+                <button type="submit" class="btn btn-primary">&nbsp;は い&nbsp;</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    @endforeach
+
 @endsection

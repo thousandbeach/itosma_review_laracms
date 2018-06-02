@@ -36,7 +36,7 @@
                                         <form id="deletePost-{{ $post->id }}" action="{{ route('deletePost', $post->id) }}" method="POST">
                                             {{ csrf_field() }}
                                         </form><br>
-                                        <a href="#" onclick="document.getElementById('deletePost-{{ $post->id }}').submit()" class="btn-danger btn">削 除</a>
+                                        <button type="button" class="btn-danger btn" data-toggle="modal" data-target="#deletePostModal-{{ $post->id }}">削 除</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -46,4 +46,29 @@
                 </div>
             </div>
         </div>
+
+        @foreach (Auth::user()->posts as $post)
+            <!-- Modal -->
+            <div class="modal fade" id="deletePostModal-{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">あなたは、『 {{ $post->title }} 』"の記事を削除しようとしています...</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="modal-body">
+                    削除してもよろしいでしょうか？
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">いいえ</button>
+                    <form id="deletePost-{{ $post->id }}" action="{{ route('deletePost', $post->id) }}" method="POST">
+                        {{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary">&nbsp;は い&nbsp;</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        @endforeach
+
 @endsection
