@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Validator; // 昨晩ついk
+use Illuminate\Foundation\Auth\RegistersUsers; // 昨晩追加
 
 class UserUpdate extends FormRequest
 {
@@ -25,8 +27,8 @@ class UserUpdate extends FormRequest
     {
         return [
             //バリデーションルール
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|email|max:191', //|unique:users', これは必要ないかも
+            'name' => 'required|string|max:180',
+            'email' => 'required|string|email|max:180', //|unique:users', これは必要ないかも
         ];
     }
 }

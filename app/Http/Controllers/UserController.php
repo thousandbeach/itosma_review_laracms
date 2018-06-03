@@ -78,19 +78,41 @@ class UserController extends Controller
 
         if($request['password'] != "") {
             if(!(Hash::check($request['password'], Auth::user()->password))) {
-                return redirect()->back()->with('error', "現在のパスワードと入力したパスワードが一致しないようです...");
+                return redirect()->back()->with("error", "現在のパスワードと入力したパスワードが一致しないようです...");
             }
 
+/*
             if(strcmp($request['password'], $request['new_password']) == 0){
-                return redirect()->back()->with('error', "新しいパスワードは現在のパスワードとは違うものをご入力ください。");
+                return redirect()->back()->with("error", "新しいパスワードは現在のパスワードとは違うものをご入力ください。");
             }
-
+*/
+if($request['password'] == $request['newpassword']){
+    return redirect()->back()->with("error", "新しいパスワードは現在のパスワードとは違うものをご入力ください。");
+}
+/*
+if(!$request['new_password'] == $request['new_password_confirmation']){
+    return redirect()->back()->with("error", "新しいパスワードと新しい確認用のパスワードは、全く同じものをご入力ください。");
+}
+*/
+/*
             $validation = $request->validate([
-                'password' => 'required|string|min:6',
-                'new_password' => 'required|string|min:6|confirmed',
+                'password' => 'required|string|min:6|same:password',
+                'new_password' => 'required|string|min:6|different:password|confirmed',
+                'new_password_confirmation' => 'required|string|min:6|same:new_password',
             ]);
+*/
 
-            $user->password = bcrypt($request['new_password']);
+$this->validate($request, [
+    /*'password' => 'required|string|min:6',
+    'new_password' => 'required|string|min:6|different:password|same:password',
+    'new_password_confirmation' => 'required|string|min:6|same:new_password',*/
+    'password' => 'required',
+    'newpassword' => 'required|string|min:6|confirmed',
+    'newpassword_confirmation' => 'required|string|min:6|same:newpassword',
+]);
+
+
+            $user->password = bcrypt($request['newpassword']);
             $user->save();
 
             return redirect()->back()->with('success', 'パスワードの変更完了！');
