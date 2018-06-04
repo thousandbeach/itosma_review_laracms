@@ -22,6 +22,13 @@
     <!-- Post Content -->
     <article>
       <div class="container">
+          @if ($errors->any())
+              @foreach ($errors->all() as $error)
+                  <div class="alert alert-danger">
+                      {{ $error }}
+                  </div>
+              @endforeach
+          @endif
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             {!! nl2br($post->content) !!}
@@ -32,6 +39,11 @@
             <hr>
             <h2>Comments</h2>
             <hr>
+            @foreach ($post->comments as $comment)
+            <p>{{ $comment->content }}<br></p>
+            <p><small>by {{ $comment->user->name }}, on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}</small></p>
+            @endforeach
+
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">
@@ -39,10 +51,6 @@
                     </div>
                 @endforeach
             @endif
-            @foreach ($post->comments as $comment)
-            <p>{{ $comment->content }}<br></p>
-            <p><small>by {{ $comment->user->name }}, on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}</small></p>
-            @endforeach
 
             @if (Auth::check())
                 <form action="{{ route('newComment') }}" method="POST">

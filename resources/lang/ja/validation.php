@@ -122,6 +122,7 @@ return [
         'password' => 'パスワード',
         'newpassword' => '新しいパスワード',
         'newpassword_confirmation' => '新しい確認用のパスワード',
+        'comment' => 'コメント',
     ],
 
 ];
