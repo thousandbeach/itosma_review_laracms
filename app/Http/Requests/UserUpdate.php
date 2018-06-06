@@ -3,11 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-//use Illuminate\Support\Facades\Validator; // 昨晩ついk
-// use Illuminate\Foundation\Auth\RegistersUsers; // 昨晩追加
+//use Illuminate\Support\Facades\Validator; // 昨晩ついk 必要なし
+// use Illuminate\Foundation\Auth\RegistersUsers; // 昨晩追加 必要なし
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
-//use App\User;
+//use App\User; 必要なし
 
 class UserUpdate extends FormRequest
 {
