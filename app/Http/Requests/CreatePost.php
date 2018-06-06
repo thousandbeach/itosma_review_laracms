@@ -25,7 +25,7 @@ class CreatePost extends FormRequest
     {
         return [
             // 記事投稿のバリデーションルールについて
-            'title' => 'required|string|max:191',
+            'title' => 'required|string|max:180',
             'content' => 'required|max:65000',
         ];
     }

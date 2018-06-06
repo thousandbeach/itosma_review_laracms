@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title'){{ $post->title, ' | StartUpCMS - スタートアップのための軽くて速い堅牢なモダンスタイルCMS' }}@endsection
+
 @section('content')
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('{{ asset('assets/img/post-bg.jpg') }}')">
