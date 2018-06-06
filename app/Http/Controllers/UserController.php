@@ -106,7 +106,9 @@ $this->validate($request, [
     /*'password' => 'required|string|min:6',
     'new_password' => 'required|string|min:6|different:password|same:password',
     'new_password_confirmation' => 'required|string|min:6|same:new_password',*/
-    'password' => 'required',
+    /*'name' => 'required|string|max:180',
+    'email' => 'required|string|email|max:180|unique:users,email_address,'.$user->id,
+    'password' => 'required',*/
     'newpassword' => 'required|string|min:6|confirmed',
     'newpassword_confirmation' => 'required|string|min:6|same:newpassword',
 ]);
