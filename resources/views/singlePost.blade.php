@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title'){{ $post->title, ' | StartUpCMS - スタートアップのための軽くて速い堅牢なモダンスタイルCMS' }}@endsection
+@section('title'){{ $post->title . ' | StartUpCMS - Blog', ' | StartUpCMS - スタートアップのための軽くて速い堅牢なモダンスタイルCMS' }}@endsection
 
 @section('content')
     <!-- Page Header -->
@@ -13,7 +13,7 @@
               <h1>{{ $post->title }}</h1>
               <!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>-->
               <span class="meta">Posted by
-                <a href="#">{{ $post->user->name }}</a>
+                <a href="">{{ $post->user->name }}</a>
                 on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}</span>
             </div>
           </div>
