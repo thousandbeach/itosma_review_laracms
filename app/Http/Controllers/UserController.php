@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,20 @@ class UserController extends Controller
     //
     public function __construct(){
         $this->middleware('auth'); // ログインしてないときに管理パネル（/user/comments等）にアクセスしたときに、エラーになっていたのを、loginページが表示されるようにした
+    }
+
+    public function singlePostAuthor(Post $post){
+        $singlePostAuthor = User::all();
+        $user = User::find($id);
+        $tasklists = $user->tasklists()->orderBy('created_at', 'desc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'tasklists' => $tasklists,
+        ];
+
+        $data += $this->counts($user);
+        return view('singlePostAuthor', compact('singlePostAuthor', 'data'));
     }
 
     // 管理パネルの左側サイドバーのUSERのところのdashboardに相当

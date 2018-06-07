@@ -22,8 +22,20 @@ class PublicController extends Controller
     }
 
     // 投稿ページ（名前ごとに一覧表示させるページ）
+    /*public function singlePostAuthor(Post $posts){
+        //$posts = Post::all();
+        //return view('singlePostAuthor', compact('posts'));
+        return view('singlePostAuthor');
+    }*/
+
+    /*public function singlePostAuthor(Post $post){
+        $singlePostAuthor = DB::table('posts')->where('name', '==', Auth::user()->id())->get();
+        return view('singlePostAuthor', compact('singlePostAuthor'));
+    }*/
+
     public function singlePostAuthor(Post $post, User $user){
-        return view('singlePostAuthor', compact('post', 'user'));
+        $singlePostAuthor = User::all();
+        return view('singlePostAuthor');
     }
 
     // Aboutページ

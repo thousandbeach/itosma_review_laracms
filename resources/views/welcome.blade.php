@@ -31,7 +31,7 @@
                 </h3>-->
                 </a>
                 <p class="post-meta">Posted by
-                  <a href="#">{{ $post->user->name }}</a>
+                  <a href="{{ route('singlePostAuthor', $post->user->name) }}">{{ $post->user->name }}</a>
                   on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}&nbsp;
                   | &nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{ $post->comments->count() }}
                 </p>

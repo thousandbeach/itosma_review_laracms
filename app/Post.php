@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Comment;
+use App\User;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Post extends Model
 {
