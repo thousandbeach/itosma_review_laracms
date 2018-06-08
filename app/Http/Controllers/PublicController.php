@@ -33,9 +33,9 @@ class PublicController extends Controller
         return view('singlePostAuthor', compact('singlePostAuthor'));
     }*/
 
-    public function singlePostAuthor(Post $post, User $user){
-        $singlePostAuthor = User::all();
-        return view('singlePostAuthor')->with(['post' => $post, 'user' => $user]);
+
+    public function singlePostAuthor(){
+        return view('singlePostAuthor');
     }
 
     // Aboutページ
