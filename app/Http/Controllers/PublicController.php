@@ -50,6 +50,8 @@ class PublicController extends Controller
             $postss = $post->user->name;
             if( strpos($request->url(), $postss)){
                 return view('blogUsers', compact('post','posts','request','postss'));
+            } else {
+                return redirect('/blogUsers')->with('error', 'その投稿者は存在しません...');
             }
         }
     }
