@@ -38,23 +38,23 @@
 
             @foreach ($posts as $post)
                 @if ($post->user->name == $postss)
-                <div class="post-preview">
-                  <a href="{{ route('singlePost', $post->id) }}">
-                    <h2 class="post-title">
-                      {{ $post->title }}
-                    </h2>
-                    <!--<h3 class="post-subtitle">
-                      Problems look mighty small from 150 miles up
-                  </h3>-->
-                  </a>
-                  <p class="post-meta">Posted by
-                    <a href="{{ route('blogUsers', $post->user->name ) }}">{{ $post->user->name }}</a>
-                    on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}&nbsp;
-                    | &nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{ $post->comments->count() }}
-                  </p>
-                </div>
+                    <div class="post-preview">
+                      <a href="{{ route('singlePost', $post->id) }}">
+                        <h2 class="post-title">
+                          {{ $post->title }}
+                        </h2>
+                        <!--<h3 class="post-subtitle">
+                          Problems look mighty small from 150 miles up
+                      </h3>-->
+                      </a>
+                      <p class="post-meta">Posted by
+                        <a href="{{ route('blogUsers', $post->user->name ) }}">{{ $post->user->name }}</a>
+                        on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}&nbsp;
+                        | &nbsp;<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;{{ $post->comments->count() }}
+                      </p>
+                    </div>
                 <hr>
-            @endif
+                @endif
             @endforeach
 
             <!-- Pager -->

@@ -50,7 +50,7 @@ class PublicController extends Controller
             $postss = $post->user->name;
             if( strpos($request->url(), $postss)){
                 return view('blogUsers', compact('post','posts','request','postss'));
-            } 
+            }
         }
     }
 
