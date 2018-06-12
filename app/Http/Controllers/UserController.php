@@ -138,6 +138,6 @@ $this->validate($request, [
 
         $comment->save();
 
-        return back();
+        return redirect()->back()->with('success', 'コメントの投稿が完了しました！');
     }
 }

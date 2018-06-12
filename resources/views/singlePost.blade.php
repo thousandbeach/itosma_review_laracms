@@ -24,6 +24,11 @@
     <!-- Post Content -->
     <article>
       <div class="container">
+
+          @if (Session::has('success'))
+              <div class="alert alert-success">{{ Session::get('success') }}</div>
+          @endif
+
           @if ($errors->any())
               @foreach ($errors->all() as $error)
                   <div class="alert alert-danger">
@@ -45,6 +50,10 @@
             <p>{{ $comment->content }}<br></p>
             <p><small>by {{ $comment->user->name }}, on &nbsp;{{ date_format($post->created_at, 'Y年 m月 d日 (D)') }}</small></p>
             @endforeach
+
+            @if (Session::has('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @endif
 
             @if ($errors->any())
                 @foreach ($errors->all() as $error)

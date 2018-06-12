@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -72,12 +73,13 @@ class AuthorController extends Controller
         return view('author.newPost');
     }
 
-    public function createPost(CreatePost $request){
+    public function createPost(CreatePost $request, Post $post){
 
         $post = new Post;
+        $post->user_id = Auth::id();
+        $post->user_id = $request->user()->id;  // 追記 ６月12日 記事を投稿したユーザー名のリレーション
         $post->title = $request['title'];
         $post->content = $request['content'];
-        $post->user_id = Auth::id();
         $post->save();
 
         // 右の場合だと、Auth::id() の現在認証されているユーザーのID取得にならzy、エラーとなる。$post->fill($request->all())->save();

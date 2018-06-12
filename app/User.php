@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Post;
+use App\Comment;
 use Carbon\Carbon;
 
 class User extends Authenticatable

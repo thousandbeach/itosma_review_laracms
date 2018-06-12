@@ -33,9 +33,25 @@ class PublicController extends Controller
         return view('singlePostAuthor', compact('singlePostAuthor'));
     }*/
 
-    public function singlePostAuthor(User $user){
-        $users = User::all();
-        return view('welcome', compact('users'));
+    public function blogUsers(Post $post, Request $request){
+        //$user_posts = Post::where('user_id', $user_id)->get();
+        //$users = Post::all()->find($post->user_id);
+        /*$ppppp = singlePost(Post, $post);
+        $pppp = $posts->user->name;
+        if($ppppp == $pppp){
+            return view('singlePostAuthor', compact('pppp'));
+        }*/
+        $posts = Post::all();
+        /*foreach ($posts as $post) {
+            return view('singlePostAuthor', compact('post'));
+        }*/
+        //dd(view('blogUsers', compact('post','posts')));
+        foreach ($posts as $post) {
+            $postss = $post->user->name;
+            if( strpos($request->url(), $postss)){
+                return view('blogUsers', compact('post','posts','request','postss'));
+            }
+        }
     }
 
     // Aboutページ

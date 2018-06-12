@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PublicController@index')->name('index'); // トップページ
+Route::get('blog/{name}', 'PublicController@blogUsers')->name('blogUsers');
 Route::get('post/{post}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
 Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
 
@@ -21,8 +22,6 @@ Route::post('contact', 'PublicController@contactPost')->name('contactPost'); // 
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
-Route::get('{singlepostauthor}', 'PublicController@singlePostAuthor')->name('singlePostAuthor');
 
 
 Route::prefix('user')->group(function(){
