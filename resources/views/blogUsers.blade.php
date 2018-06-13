@@ -31,7 +31,7 @@
                         </h2>
                         <!--<h3 class="post-subtitle">
                           Problems look mighty small from 150 miles up
-                      </h3>-->
+                        </h3>-->
                       </a>
                       <p class="post-meta">Posted by
                         <a href="{{ route('blogUsers', $post->user->name ) }}">{{ $post->user->name }}</a>
