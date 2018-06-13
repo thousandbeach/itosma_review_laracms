@@ -10,9 +10,7 @@ class PublicController extends Controller
 {
     // トップページ
     public function index(){
-
         $posts = Post::all();
-
         return view('welcome', compact('posts'));
     }
 
