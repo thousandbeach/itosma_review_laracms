@@ -9,10 +9,12 @@
             <div class="card-header bg-light">
                 Admin Comments (管理者用のコメントページ)
             </div>
-
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped">
+
+                        @if ( count($comments) > 0 )
+
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -35,6 +37,10 @@
                             </tr>
                         @endforeach
                         </tbody>
+
+                            {{ $comments->render() }}
+                        @endif
+
                     </table>
                 </div>
             </div>

@@ -50,7 +50,8 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当
     public function comments(){
-        $comments = Comment::all();
+        //$comments = Comment::all();
+        $comments = Comment::paginate(10);
         return view('admin.comments', compact('comments'));
     }
 
@@ -62,7 +63,8 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのpostsに相当
     public function posts(){
-        $posts = Post::all();
+        //$posts = Post::all();
+        $posts = Post::paginate(10);
         return view('admin.posts', compact('posts'));
     }
 
@@ -89,7 +91,8 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのusersに相当
     public function users(){
-        $users = User::all();
+        //$users = User::all();
+        $users = User::paginate(10);
         return view('admin.users', compact('users'));
     }
 

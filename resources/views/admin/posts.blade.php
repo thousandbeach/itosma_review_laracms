@@ -13,6 +13,9 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
+
+                            @if ( count($posts) > 0 )
+
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -41,6 +44,10 @@
                                 </tr>
                             @endforeach
                             </tbody>
+
+                                {{ $posts->render() }}
+                            @endif
+
                         </table>
                     </div>
                 </div>
