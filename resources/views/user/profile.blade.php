@@ -45,7 +45,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-control-label" for="name">お名前</label>
+                                                <label class="form-control-label" for="name">ユーザー名 (半角英数字のみ)</label>
                                                 <input name="name" class="form-control" value="{{ Auth::user()->name }}" >
                                             </div>
                                         </div>

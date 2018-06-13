@@ -117,7 +117,7 @@ return [
     */
 
     'attributes' => [  // 空のattribiutesに下記の３項目を追加
-        'name' => 'お名前',
+        'name' => 'ユーザー名',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
         'newpassword' => '新しいパスワード',
