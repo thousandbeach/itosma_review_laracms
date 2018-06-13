@@ -48,7 +48,11 @@ class PublicController extends Controller
         //dd(view('blogUsers', compact('post','posts')));
         foreach ($posts as $post) {
             $postss = $post->user->name;
-            if( strpos($request->url(), $postss)){
+            //if( strpos($request->url(), $postss)){
+            $bUKeys = parse_url($request->url()); //パース処理
+            $bUPath = explode("/", $bUKeys['path']); //分割処理
+            $bULast = end($bUPath); //最後の要素を取得
+            if($bULast === $postss){
                 return view('blogUsers', compact('post','posts','request','postss'));
             }
         }

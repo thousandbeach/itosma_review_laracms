@@ -8,23 +8,9 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!--<h2 class="subheading">Problems look mighty small from 150 miles up</h2>-->
-
               <h1>{{ $postss }}</h1>
-              <span class="subheading">This is what I do.</span>
+              <span class="subheading">List of articles</span>
             </div>
           </div>
         </div>
