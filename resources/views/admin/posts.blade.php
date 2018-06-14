@@ -45,7 +45,7 @@
                             @endforeach
                             </tbody>
 
-                                {{ $posts->links() }}
+                                {{ $posts->links('vendor.pagination.bootstrap-4') }}
                             @endif
 
                         </table>

@@ -38,7 +38,7 @@
                         @endforeach
                         </tbody>
 
-                            {{ $comments->links() }}
+                            {{ $comments->links('vendor.pagination.bootstrap-4') }}
                         @endif
 
                     </table>

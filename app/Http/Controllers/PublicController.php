@@ -10,7 +10,8 @@ class PublicController extends Controller
 {
     // トップページ
     public function index(){
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::paginate(10);
         return view('welcome', compact('posts'));
     }
 
@@ -39,7 +40,7 @@ class PublicController extends Controller
         if($ppppp == $pppp){
             return view('singlePostAuthor', compact('pppp'));
         }*/
-        $posts = Post::all();
+        $posts = Post::all(); //ペジネーションだと動かない
         /*foreach ($posts as $post) {
             return view('singlePostAuthor', compact('post'));
         }*/
