@@ -38,7 +38,7 @@
                         @endforeach
                         </tbody>
 
-                            {{ $comments->render() }}
+                            {{ $comments->links() }}
                         @endif
 
                     </table>

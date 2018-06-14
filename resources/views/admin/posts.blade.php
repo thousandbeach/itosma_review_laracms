@@ -45,7 +45,7 @@
                             @endforeach
                             </tbody>
 
-                                {{ $posts->render() }}
+                                {{ $posts->links() }}
                             @endif
 
                         </table>

@@ -47,7 +47,7 @@
                         @endforeach
                         </tbody>
 
-                            {{ $users->render() }}
+                            {{ $users->links() }}
                         @endif
 
                     </table>
