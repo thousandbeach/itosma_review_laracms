@@ -46,12 +46,13 @@ class PublicController extends Controller
         }*/
         //dd(view('blogUsers', compact('post','posts')));
         foreach ($posts as $post) {
-            $postss = $post->user->name;
+            $postss = urldecode($post->user->name); // URLデコード 漢字や空白対策
             //if( strpos($request->url(), $postss)){
             $bUKeys = parse_url($request->url()); //パース処理
             $bUPath = explode("/", $bUKeys['path']); //分割処理
             $bULast = end($bUPath); //最後の要素を取得
-            if($bULast === $postss){
+            $bULastEn = urldecode($bULast); // 最後の要素をURLデコード 漢字や空白対策
+            if($bULastEn === $postss){
                 return view('blogUsers', compact('post','posts','request','postss'));
             }
         }

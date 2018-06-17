@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'PublicController@index')->name('index'); // トップページ
-Route::get('blog/{name}', 'PublicController@blogUsers')->name('blogUsers');
-Route::get('post/{post}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
+Route::get('author/{name}', 'PublicController@blogUsers')->name('blogUsers');
+Route::get('blog/{post}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
 Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
 
 Route::get('contact', 'PublicController@contact')->name('contact'); // Contactページ GET

@@ -31,7 +31,7 @@ class UserUpdate extends FormRequest
         $user_id = Auth::user()->id;
         return [
             //バリデーションルール
-            'name' => 'required|string|alpha|max:180',
+            'name' => 'required|string|max:180',
             'email' => 'required|string|email|max:180',
             'password' => 'required',
             'newpassword' => 'required|string|min:6|confirmed',
