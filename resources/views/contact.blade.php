@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>Contact Me</h1>
+              <h1>Contact US</h1>
               <span class="subheading">Have questions? I have answers.</span>
             </div>
           </div>
@@ -28,6 +28,7 @@
           <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
           <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
           <form name="sentMessage" id="contactForm" novalidate>
+              {{ csrf_field() }}
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="name">お名前</label>

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PublicController@index')->name('index'); // トップページ
-Route::get('author/{name}', 'PublicController@blogUsers')->name('blogUsers');
+Route::get('authors/{name}', 'PublicController@blogUsers')->name('blogUsers');
 Route::get('blog/{post}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
 Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
 
