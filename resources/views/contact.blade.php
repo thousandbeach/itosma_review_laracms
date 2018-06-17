@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title'){{'Contact Me - お問い合わせ | StartUpCMS - Blog', ' | StartUpCMS - スタートアップのための軽くて速い堅牢なモダンスタイルCMS' }}@endsection
+
 @section('content')
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('{{ asset('assets/img/contact-bg.jpg') }}')">
@@ -20,7 +22,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+          <h4>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</h4>
+          <p>48時間以内に必ずご返信させていただきます。</p><br>
           <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
           <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
           <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
