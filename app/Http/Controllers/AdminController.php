@@ -48,6 +48,13 @@ class AdminController extends Controller
         return $dates;
     }
 
+    // 管理パネルの左側サイドバーのADMINのところのContactに相当
+    public function contact(){
+        //$comments = Comment::all();
+        $comments = Contact::paginate(10);
+        return view('admin.contact', compact('contact'));
+    }
+
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当
     public function comments(){
         //$comments = Comment::all();

@@ -46,6 +46,12 @@
             </li>
 
             <li class="nav-item nav-dropdown">
+                <a href="{{ route('adminDashboard') }}" class="nav-link {{ Route::currentRouteName() === 'adminDashboard' ? 'active' : '' }}">
+                    <i class="icon icon-envelope"></i> Contact
+                </a>
+            </li>
+
+            <li class="nav-item nav-dropdown">
                 <a href="{{ route('adminPosts') }}" class="nav-link {{ Route::currentRouteName() === 'adminPosts' ? 'active' : '' }}">
                     <i class="icon icon-paper-clip"></i> Posts
                 </a>

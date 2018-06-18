@@ -32,14 +32,14 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="name">お名前</label>
-                <input type="text" class="form-control" placeholder="お名前" id="name" required data-validation-required-message="Please enter your name.">
+                <input type="text" class="form-control" placeholder="お名前" id="name" required data-validation-required-message="お名前のご入力をお願いいたします。">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="email">メールアドレス</label>
-                <input type="email" class="form-control" placeholder="メールアドレス" id="email" required data-validation-required-message="Please enter your email address.">
+                <input type="email" class="form-control" placeholder="メールアドレス" id="email" required data-validation-required-message="メールアドレスのご入力をお願いいたします。">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -53,17 +53,43 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="message">メッセージ</label>
-                <textarea rows="5" class="form-control" placeholder="メッセージ" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                <textarea rows="5" class="form-control" placeholder="メッセージ" id="message" required data-validation-required-message="メッセージのご入力をお願いいたします。。"></textarea>
                 <p class="help-block text-danger"></p>
               </div>
+            </div>
+
+            <div class="control-group">
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox mt-4">
+                        <p><input type="checkbox" name="agree_register" id="agree_register" autocomplete="off" class="custom-control-input" required data-validation-required-message="弊社プライバシーポリシーの閲覧及び同意をお願い申し上げます。">
+                        <label class="custom-control-label text-decoration" for="agree_register"><a href="#">プライバシーポリシー</a>に同意する</label></p>
+                    </div>
+                </div>
             </div>
             <br>
             <div id="success"></div>
             <div class="form-group">
               <button type="submit" class="btn btn-primary" id="sendMessageButton">送 信</button>
-            </div>
+            </div><br>
           </form>
         </div>
       </div>
     </div>
 @endsection
+
+<script type="text/javascript">
+
+/*$(function() {
+    $('#sendMessageButton').prop('disabled', true);
+
+    $('#agree_register').on('click', function() {
+        if ($(this).prop('checked') == false) {
+            $('#sendMessageButton').prop('disabled', true);
+        } else {
+            $('#sendMessageButton').prop('disabled', false);
+        }
+    });
+});*/
+
+
+</script>
