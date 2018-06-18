@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <a href="{{ route('password.request') }}" class="btn btn-link">パス忘れちゃった？</a>
+                                    <a rel="nofollow" href="{{ route('password.request') }}" class="btn btn-link">パス忘れちゃった？</a>
                                 </div>
                             </div>
                         </div>

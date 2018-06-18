@@ -20,7 +20,7 @@
 
         @if (Auth::check())
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('dashboard') }}">ダッシュボード</a>
+              <a class="nav-link" rel="nofollow" href="{{ route('dashboard') }}">ダッシュボード</a>
             </li>
             <li class="nav-item">
                 <form id="logout-form" name="dashboard_form" action="{{ route('logout') }}" method="post">{{ csrf_field() }}
@@ -29,10 +29,10 @@
             </li>
         @else
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+              <a class="nav-link" rel="nofollow" href="{{ route('login') }}">ログイン</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('register') }}">サインアップ</a>
+              <a class="nav-link" rel="nofollow" href="{{ route('register') }}">サインアップ</a>
             </li>
         @endif
       </ul>

@@ -77,8 +77,8 @@
             @else
                 <div class="text-center"><br>
                   <ul>
-                      <p>あなたもサインアップしてコメントしてみませんか？ &nbsp;&nbsp;<a class="btn btn-primary" href="{{ route('register') }}">サインアップ</a></p>
-                      <p>すでにアカウントを持っている方は &nbsp;&nbsp;<a href="{{ route('login') }}">ログイン</a></p><br>
+                      <p>あなたもサインアップしてコメントしてみませんか？ &nbsp;&nbsp;<a class="btn btn-primary" rel="nofollow" href="{{ route('register') }}">サインアップ</a></p>
+                      <p>すでにアカウントを持っている方は &nbsp;&nbsp;<a rel="nofollow" href="{{ route('login') }}">ログイン</a></p><br>
                 </ul>
                 </div>
             @endif
