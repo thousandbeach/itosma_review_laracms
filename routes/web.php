@@ -17,8 +17,8 @@ Route::get('blog/{post}', 'PublicController@singlePost')->name('singlePost'); //
 Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
 Route::get('privacy', 'PublicController@privacy')->name('privacy');
 
-Route::get('contact', 'PublicController@contact')->name('contact'); // Contactページ GET
-Route::post('contact', 'PublicController@contactPost')->name('contactPost'); // Contactページ POST
+Route::get('contact', 'MessageController@contact')->name('contact'); // Contactページ GET
+Route::post('contact', 'MessageController@contactPost')->name('contactPost'); // Contactページ POST
 
 Auth::routes();
 
@@ -53,6 +53,8 @@ Route::prefix('admin')->group(function(){
     Route::post('posts/{id}/delete', 'AdminController@deletePost')->name('adminDeletePost');
     Route::get('comments', 'AdminController@comments')->name('adminComments');
     Route::post('comment/{id}/delete', 'AdminController@deleteComment')->name('adminDeleteComment');
+    Route::get('contact', 'AdminController@contacts')->name('adminContacts');
+    Route::post('contact/{id}/delete', 'AdminController@deleteContact')->name('adminDeleteContact');
     Route::get('users', 'AdminController@users')->name('adminUsers');
     Route::get('user/{id}/edit', 'AdminController@editUser')->name('adminEditUser');
     Route::post('user/{id}/edit', 'AdminController@editUserPost')->name('adminEditUserPost');

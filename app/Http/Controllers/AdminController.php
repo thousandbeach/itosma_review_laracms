@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Comment;
 use App\Post;
 use App\User;
+use App\Message;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePost;
 use App\Http\Requests\UserUpdate;
@@ -48,11 +49,11 @@ class AdminController extends Controller
         return $dates;
     }
 
-    // 管理パネルの左側サイドバーのADMINのところのContactに相当
-    public function contact(){
+    // 管理パネルの左側サイドバーのADMINのところのContactsに相当
+    public function contacts(){
         //$comments = Comment::all();
-        $comments = Contact::paginate(10);
-        return view('admin.contact', compact('contact'));
+        $messages = Message::paginate(10);
+        return view('admin.contact', compact('messages'));
     }
 
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当

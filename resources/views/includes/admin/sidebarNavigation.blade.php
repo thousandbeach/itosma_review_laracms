@@ -46,7 +46,7 @@
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="{{ route('adminDashboard') }}" class="nav-link {{ Route::currentRouteName() === 'adminDashboard' ? 'active' : '' }}">
+                <a href="{{ route('adminContacts') }}" class="nav-link {{ Route::currentRouteName() === 'adminContacts' ? 'active' : '' }}">
                     <i class="icon icon-envelope"></i> Contact
                 </a>
             </li>

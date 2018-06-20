@@ -63,16 +63,6 @@ class PublicController extends Controller
         return view('about');
     }
 
-    // Contactページ GET
-    public function contact(){
-        return view('contact');
-    }
-
-    // Contactページ POST
-    public function contactPost(){
-
-    }
-
     // PrivacyPolicyページ GET
     public function privacy(){
         return view('privacy');

@@ -32,14 +32,14 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="name">お名前</label>
-                <input type="text" class="form-control" placeholder="お名前" id="name" required data-validation-required-message="お名前のご入力をお願いいたします。">
+                <input type="text" class="form-control" placeholder="お名前" name="name" id="name" required data-validation-required-message="お名前のご入力をお願いいたします。">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="email">メールアドレス</label>
-                <input type="email" class="form-control" placeholder="メールアドレス" id="email" required data-validation-required-message="メールアドレスのご入力をお願いいたします。">
+                <input type="email" class="form-control" name="email" placeholder="メールアドレス" id="email" required data-validation-required-message="メールアドレスのご入力をお願いいたします。">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -53,7 +53,7 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label for="message">メッセージ</label>
-                <textarea rows="5" class="form-control" placeholder="メッセージ" id="message" required data-validation-required-message="メッセージのご入力をお願いいたします。。"></textarea>
+                <textarea rows="5" class="form-control" name="message" placeholder="メッセージ" id="message" required data-validation-required-message="メッセージのご入力をお願いいたします。。"></textarea>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -76,20 +76,3 @@
       </div>
     </div>
 @endsection
-
-<script type="text/javascript">
-
-/*$(function() {
-    $('#sendMessageButton').prop('disabled', true);
-
-    $('#agree_register').on('click', function() {
-        if ($(this).prop('checked') == false) {
-            $('#sendMessageButton').prop('disabled', true);
-        } else {
-            $('#sendMessageButton').prop('disabled', false);
-        }
-    });
-});*/
-
-
-</script>
