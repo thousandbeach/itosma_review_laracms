@@ -91,7 +91,7 @@
                 <div class="card-body py-5">
                     <div class="form-group">
                         <label class="form-control-label">ユーザー名</label>
-                        <input type="name" name="name" class="form-control{{ $errors->has('name') ? ' has-error text-danger' : '' }}" value="{{ old('name') }}" required autofocus placeholder="半角英数字のみ">
+                        <input type="name" name="name" class="form-control{{ $errors->has('name') ? ' has-error text-danger' : '' }}" value="{{ old('name') }}" required autofocus>
                         @if ($errors->has('name'))
                             <span class="help-block">
                                 <strong class="text-danger">{{ $errors->first('name') }}</strong>

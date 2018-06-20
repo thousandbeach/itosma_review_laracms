@@ -27,7 +27,7 @@
           <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
           <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
           <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-          <form name="sentMessage" id="contactForm" novalidate>
+          <form name="sentMessage" method="POST" action="{{ route('contact') }}" id="contactForm" novalidate>
               {{ csrf_field() }}
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
@@ -62,7 +62,7 @@
                 <div class="form-group">
                     <div class="custom-control custom-checkbox mt-4">
                         <p><input type="checkbox" name="agree_register" id="agree_register" autocomplete="off" class="custom-control-input" required data-validation-required-message="弊社プライバシーポリシーの閲覧及び同意をお願い申し上げます。">
-                        <label class="custom-control-label text-decoration" for="agree_register"><a href="#">プライバシーポリシー</a>に同意する</label></p>
+                        <label class="custom-control-label text-decoration" for="agree_register"><a href="{{ route('privacy') }}">プライバシーポリシー</a>に同意する</label></p>
                     </div>
                 </div>
             </div>

@@ -15,6 +15,7 @@ Route::get('/', 'PublicController@index')->name('index'); // トップページ
 Route::get('authors/{name}', 'PublicController@blogUsers')->name('blogUsers');
 Route::get('blog/{post}', 'PublicController@singlePost')->name('singlePost'); // 投稿ページ
 Route::get('about', 'PublicController@about')->name('about'); // Aboutページ
+Route::get('privacy', 'PublicController@privacy')->name('privacy');
 
 Route::get('contact', 'PublicController@contact')->name('contact'); // Contactページ GET
 Route::post('contact', 'PublicController@contactPost')->name('contactPost'); // Contactページ POST
