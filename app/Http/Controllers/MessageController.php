@@ -29,7 +29,7 @@ class MessageController extends Controller
 
         $message->name = $request['name'];
         $message->email = $request['email'];
-        $message->message = $request['message'];
+        $message->text = $request['message'];
 
         $message->save();
 
