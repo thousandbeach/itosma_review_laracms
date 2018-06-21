@@ -17,7 +17,7 @@
                                 <span class="font-weight-light">The number of inquiries &nbsp;&nbsp;(すべてのお問合わせ件数)</span>
                             </div>
                             <div class="h2 text-muted">
-                                <button class="btn btn-primary">お問合わせ内容を確認する</button>
+                                <a href="{{ route('adminContacts') }}">お問合わせ内容を確認する</a>
                             </div>
                             <div class="h2 text-muted">
                                 <i class="icon icon-envelope"></i>

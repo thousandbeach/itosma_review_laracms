@@ -30,6 +30,7 @@
                             <tr>
                                 <td>{{ $message->id }}</td>
                                 <td class="text-nowrap">{{ $message->name }}</td>
+                                <td class="">{{ $message->email }}</td>
                                 <td>{{ $message->message }}</td>
                                 <td>{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</td>
                                 <td>
@@ -54,7 +55,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                  <h4 class="modal-title" id="myModalLabel">あなたは、『 {{ $message->id }} 』"のお問合わせ内容を削除しようとしています...</h4>
+                  <h4 class="modal-title" id="myModalLabel">あなたは、ID『 {{ $message->id }} 』の『 {{ $message->name }} 』様よりいただいたお問合わせ内容を削除しようとしています...</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
               <div class="modal-body">

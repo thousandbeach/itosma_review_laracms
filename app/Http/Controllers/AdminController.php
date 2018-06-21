@@ -51,9 +51,14 @@ class AdminController extends Controller
 
     // 管理パネルの左側サイドバーのADMINのところのContactsに相当
     public function contacts(){
-        //$comments = Comment::all();
         $messages = Message::paginate(10);
         return view('admin.contact', compact('messages'));
+    }
+
+    public function deleteMessage(){
+        $message = Contact::where('id', $id)->first();
+        $message->delete();
+        return back();
     }
 
     // 管理パネルの左側サイドバーのADMINのところのcommentsに相当
