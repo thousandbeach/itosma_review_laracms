@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-
 @section('title') Admin - 管理者用のお問合わせ内容閲覧ページ @endsection
 
 @section('content')

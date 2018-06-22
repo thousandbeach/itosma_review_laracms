@@ -23,6 +23,12 @@ class AdminController extends Controller
     // 管理パネルの左側サイドバーのADMINのところのdashboardに相当
     public function dashboard(){
 
+        $allMessages = Message::all();
+        //dump($allMessages);
+
+        $todayMessages = $allMessages->where('created_at', '>=', \Carbon\Carbon::today())->count();
+        //dump($todayMessages);
+
         // Chart.js 関連
         $chart = new DashboardChart;
         // Carbon\Carbon
@@ -37,7 +43,7 @@ class AdminController extends Controller
         $chart->dataset('Posts', 'line', $posts);
         $chart->labels($days);
 
-        return view('admin.dashboard', compact('chart'));
+        return view('admin.dashboard', compact('allMessages','todayMessages','chart'));
     }
 
     // Chart.js関連
