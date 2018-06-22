@@ -21,13 +21,14 @@ $(function() {
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
         //url: "././mail/contact_me.php",
-        url: "/resources/views/contact.blade.php",
+        url: "contact",
         type: "POST",
         data: {
           name: name,
           //phone: phone,
           email: email,
-          message: message
+          message: message,
+
         },
         cache: false,
         success: function() {
@@ -36,7 +37,7 @@ $(function() {
           $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
           $('#success > .alert-success')
-            .append("<strong>あなたのメッセージは送信されました！</strong>");
+            .append("<strong>メッセージの送信が完了いたしました！ 48時間以内に回答させていただきます。</strong>");
           $('#success > .alert-success')
             .append('</div>');
           //clear all fields
@@ -73,4 +74,11 @@ $(function() {
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
   $('#success').html('');
+});
+
+// 以下 藤原追加 Ajax
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
 });

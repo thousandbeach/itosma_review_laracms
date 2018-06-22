@@ -29,7 +29,7 @@
                         @foreach ($messages as $message)
                             <tr>
                                 <td>{{ $message->id }}</td>
-                                <td class="text-nowrap">{{ $message->name }}</td>
+                                <td class="text-nowrap">{{ $message->name }} 様</td>
                                 <td class="">{{ $message->email }}</td>
                                 <td>{{ $message->message }}</td>
                                 <td>{{ \Carbon\Carbon::parse($message->created_at)->diffForHumans() }}</td>
