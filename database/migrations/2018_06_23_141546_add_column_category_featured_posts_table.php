@@ -14,7 +14,9 @@ class AddColumnCategoryFeaturedPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            // category_id と featured(画像) カラムを追加
+            $table->integer('category_id');
+            $table->string('featured');
         });
     }
 
