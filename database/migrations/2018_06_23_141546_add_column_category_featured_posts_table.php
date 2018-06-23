@@ -29,6 +29,8 @@ class AddColumnCategoryFeaturedPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
+            $table->integer('category_id');
+            $table->string('featured');
         });
     }
 }
