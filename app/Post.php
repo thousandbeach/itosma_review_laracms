@@ -11,15 +11,19 @@ class Post extends Model
 {
     // $fillable
     protected $fillable = [
-        'user_id', 'title', 'content',
+        'user_id', 'title', 'content', 'category_id', 'featured'
     ];
 
     public function user(){
         return $this->belongsTo('App\User');
     }
 
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+
     public function Userr(){
-        return $this->belogsTo('Userr', 'user_id');
+        return $this->belongsTo('Userr', 'user_id');
     }
 
     public function comments(){
