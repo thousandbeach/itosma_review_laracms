@@ -124,6 +124,9 @@ return [
         'newpassword_confirmation' => '新しい確認用のパスワード',
         'comment' => 'コメント',
         'message' => 'メッセージ',
+        'title' => 'タイトル',
+        'featured' => '記事内表示イメージ',
+        'content' => '記事内容',
     ],
 
 ];
