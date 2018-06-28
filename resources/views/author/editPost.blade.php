@@ -32,7 +32,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="normal-input" class="form-control-label">Title (記事タイトル)</label>
-                                        <input name="title" id="normal-input" class="form-control" value="{{ $post->title }}" placeholder="Post title (記事のタイトルを書きましょう：180文字以内)">
+                                        <input name="title" id="normal-input" class="form-control" value="{{ $post->title }}" placeholder="Post title (記事のタイトルを書きましょう：180文字以内)" autofocus>
                                     </div>
                                 </div>
 

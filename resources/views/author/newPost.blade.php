@@ -25,18 +25,27 @@
                             </div>
                         @endif
 
-                        <form class="" action="{{ route('createPost') }}" method="POST">
+                        <form class="" action="{{ route('createPost') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="normal-input" class="form-control-label">Title (記事タイトル)</label>
-                                        <input name="title" id="normal-input" class="form-control" placeholder="Post title (記事のタイトルを書きましょう：180文字以内)">
+                                        <input name="title" id="normal-input" class="form-control" placeholder="Post title (記事のタイトルを書きましょう：180文字以内)" autofocus>
                                     </div>
                                 </div>
 
 
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="featured" class="form-control-label">Featured image (記事内表示イメージ)</label>
+                                        <input type="file" name="featured" class="form-control">
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row mt-4">
