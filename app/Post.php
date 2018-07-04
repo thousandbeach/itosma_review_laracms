@@ -11,7 +11,7 @@ class Post extends Model
 {
     // $fillable
     protected $fillable = [
-        'user_id', 'title', 'content', 'category_id', 'featured'
+        'user_id', 'title', 'content',
     ];
 
     public function user(){
