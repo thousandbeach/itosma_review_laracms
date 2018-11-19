@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameCategotiesToCtegoriesTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class RenameCategotiesToCtegoriesTable extends Migration
      */
     public function up()
     {
-        //Schema::table('categoties', function (Blueprint $table) {
-            // テーブル名categotiesからcategoriesに変更する
-            Schema::rename('categoties', 'categories');
-        //});
+        Schema::create('tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tag_name');
+            $table->string('slug')->unique()->index();
+            $table->softDeletes();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -26,6 +29,6 @@ class RenameCategotiesToCtegoriesTable extends Migration
      */
     public function down()
     {
-        Schema::rename('categories', 'categoties');
+        Schema::dropIfExists('tags');
     }
 }

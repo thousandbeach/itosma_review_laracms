@@ -26,8 +26,12 @@ class CreatePost extends FormRequest
         return [
             // 記事投稿のバリデーションルールについて
             'title' => 'required|string|max:180',
-            'featured' => 'required|image|max:2048|dimensions:min_width=100,min_height=200,max_width=600,max_height=800',
+            //'featured' => 'image|max:65536|dimensions:min_width=100,min_height=200,max_width=600,max_height=800',
+            'featured' => 'image|max:650000',
+            'category_id' => 'required|string',
             'content' => 'required|max:65000',
+            'description' => 'required|string|max:180',
+            'keyword' => 'required|string|max:180',
         ];
     }
 }
