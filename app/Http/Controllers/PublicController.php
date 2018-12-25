@@ -20,31 +20,10 @@ class PublicController extends Controller
         return view('singlePost', compact('post'));
     }
 
-    // 投稿ページ（名前ごとに一覧表示させるページ）
-    /*public function singlePostAuthor(Post $posts){
-        //$posts = Post::all();
-        //return view('singlePostAuthor', compact('posts'));
-        return view('singlePostAuthor');
-    }*/
-
-    /*public function singlePostAuthor(Post $post){
-        $singlePostAuthor = DB::table('posts')->where('name', '==', Auth::user()->id())->get();
-        return view('singlePostAuthor', compact('singlePostAuthor'));
-    }*/
 
     public function blogUsers(Post $post, Request $request){
-        //$user_posts = Post::where('user_id', $user_id)->get();
-        //$users = Post::all()->find($post->user_id);
-        /*$ppppp = singlePost(Post, $post);
-        $pppp = $posts->user->name;
-        if($ppppp == $pppp){
-            return view('singlePostAuthor', compact('pppp'));
-        }*/
         $posts = Post::all(); //ペジネーションだと動かない
-        /*foreach ($posts as $post) {
-            return view('singlePostAuthor', compact('post'));
-        }*/
-        //dd(view('blogUsers', compact('post','posts')));
+        
         foreach ($posts as $post) {
             $postss = urldecode($post->user->name); // URLデコード 漢字や空白対策
             //if( strpos($request->url(), $postss)){

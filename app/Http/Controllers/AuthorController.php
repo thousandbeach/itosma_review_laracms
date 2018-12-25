@@ -75,7 +75,6 @@ class AuthorController extends Controller
 
     public function createPost(CreatePost $request, Post $post){
 
-        $post = new Post;
         $post->user_id = Auth::id();
         $post->user_id = $request->user()->id;  // 追記 ６月12日 記事を投稿したユーザー名のリレーション
         $post->title = $request['title'];
